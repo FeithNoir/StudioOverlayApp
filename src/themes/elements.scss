@@ -1,0 +1,32 @@
+/*** Custom elements ***/
+
+.pointer,
+.btn {
+  cursor: pointer;
+}
+
+.btn {
+  margin: 0;
+  padding: 0.8rem;
+  font-size: 1.4rem;
+  border-radius: 0.5rem;
+  border: none;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+/* Media Query: Tablets y Laptops (pantallas medianas) */
+@media (min-width: 768px) {
+  .btn {
+    padding: 1rem;
+    font-size: 1.6rem;
+  }
+}
+
+/* Media Query: Laptops y Desktops (pantallas grandes) */
+@media (min-width: 1024px) {
+  .btn {
+    padding: 1.2rem;
+    font-size: 1.8rem;
+  }
+}

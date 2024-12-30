@@ -1,0 +1,15 @@
+<div class="control-group row g-1 wd-100">
+  <label for="text-position"> {{ selectField().label }} </label>
+  <select
+    id="text-position"
+    (change)="selectEvent($event)"
+    [value]="selectField().value"
+  >
+
+  @if (selectField().options) {
+    @for (option of selectField().options; track $index) {
+      <option [value]="option.value"> {{ option.label }} </option>
+    }
+  }
+  </select>
+</div>

@@ -1,0 +1,44 @@
+<aside class="control bg-white column g-2">
+  <div class="control-group">
+    <label for="image-upload" class="btn btn-secondary"> {{ isChangeImage }} Imagen</label>
+    <input type="file" id="image-upload" accept="image/*" (change)="onImageUpload($event)">
+  </div>
+
+  @if (isImgSrc) {
+    <div class="image-controls column g-1 wd-100">
+      <!-- Text Options -->
+      <shared-input [inputField]="textValue" (sendValue)="onOverlayTextChange($event)" class="wd-100" />
+
+      <shared-select [selectField]="textPosition" (sendValue)="onTextPositionChange($event)" class="wd-100" />
+
+      <div class="control-group row g-1 wd-100">
+        <shared-button [buttonField]="buttonsOptions[0]" (sendValue)="toggleBold()" />
+        <shared-button [buttonField]="buttonsOptions[1]" (sendValue)="toggleItalic()" />
+        <shared-button [buttonField]="buttonsOptions[2]" (sendValue)="toggleUnderline()" />
+      </div>
+
+      <div class="control-group row g-1 wd-100">
+        <label for="logo-toggle">Usar logo oscuro:</label>
+        <input
+          type="checkbox"
+          id="logo-toggle"
+          (change)="toggleLogo()"
+        />
+      </div>
+
+      <!-- Div Options -->
+
+      <shared-input [inputField]="opacityValue" (sendValue)="onOverlayOpacityChange($event)" class="wd-100" />
+
+      <shared-input [inputField]="colorValue" (sendValue)="onBackgroundColorChange($event)" class="wd-100" />
+
+      <shared-input [inputField]="fontValue" (sendValue)="onFontSizeChange($event)" class="wd-100" />
+
+      <shared-input [inputField]="paddingValue" (sendValue)="onPaddingChange($event)" class="wd-100" />
+
+      <shared-input [inputField]="distanceValue" (sendValue)="onGapChange($event)" class="wd-100" />
+
+      <shared-input [inputField]="verticalValue" (sendValue)="onOverlayYChange($event)" class="wd-100" />
+    </div>
+  }
+</aside>

@@ -1,0 +1,7 @@
+<button
+  class="btn"
+  [ngClass]="buttonField().class ? 'btn-secondary' : ''"
+  (click)="inputEvent()"
+>
+  {{ buttonField().name }}
+</button>

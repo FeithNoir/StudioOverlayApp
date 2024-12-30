@@ -1,0 +1,12 @@
+<div class="control-group row g-1">
+  <label for="overlay-text"> {{ inputField().label }} </label>
+  <input
+    [type]="inputField().type"
+    [attr.placeholder]="inputField().placeholder || null"
+    (input)="inputEvent($event)"
+    [value]="inputField().value"
+    [attr.min]="inputField().min || null"
+    [attr.max]="inputField().max || null"
+    [attr.step]="inputField().step || null"
+  >
+</div>

@@ -1,0 +1,41 @@
+<section class="preview column g-1">
+  <div class="preview-image row bg-white" #preview>
+    <!-- Imagen -->
+    <img [src]="imageSrc()" alt="Uploaded Image" id="uploaded-image" />
+
+    <!-- Div overlay -->
+    <div
+      class="overlay row color-white"
+      [ngStyle]="{
+        'background-color': imageProperties().backgroundColor,
+        opacity: imageProperties().overlayOpacity,
+        padding: imageProperties().padding + 'px',
+        gap: imageProperties().gap + 'px',
+        top: imageProperties().overlayY + '%',
+        'justify-content': imageProperties().textPosition
+      }"
+    >
+      <img
+        [src]="
+          imageProperties().useDarkLogo ? 'dark_logo.png' : 'light_logo.png'
+        "
+        alt="Patreon Logo"
+        class="logo"
+      />
+
+      <span
+        id="overlay-text-display"
+        [ngStyle]="{
+          'font-size': imageProperties().fontSize + 'px',
+          'font-weight': isBold(imageProperties().bold),
+          'font-style': isItalic(imageProperties().italic),
+          'text-decoration': isUnderline(imageProperties().underline),
+        }"
+      >
+        {{ imageProperties().overlayText }}
+      </span>
+    </div>
+  </div>
+
+  <button class="btn btn-secondary wd-100" (click)="downloadImage()">Descargar Imagen</button>
+</section>

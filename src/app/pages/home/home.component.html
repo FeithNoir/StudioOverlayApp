@@ -1,0 +1,7 @@
+<main class="container column">
+  @if (uploadedImageSrc) {
+    <home-preview [imageSrc]="uploadedImageSrc" [imageProperties]="imageProperties"  />
+  }
+
+  <home-controls (imageUploaded)="handleImageUpload($event)" (imageOptions)="handleImageOptions($event)" />
+</main>

@@ -1,0 +1,21 @@
+.container {
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Media query para tablets y laptops (pantallas medianas) */
+@media (min-width: 768px) {
+  .container {
+    gap: 1.5rem;
+    padding: 1.5rem;
+    flex-direction: row-reverse;
+  }
+}
+
+/* Media query para laptops y desktops (pantallas grandes) */
+@media (min-width: 1024px) {
+  .container {
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
